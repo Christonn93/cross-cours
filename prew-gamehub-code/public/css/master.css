@@ -1,0 +1,1087 @@
+/* ======================
+STYLE SHEET FOR GAMEHUB INC. 
+
+Style list:
+
+1. Global style
+
+2. Typography
+
+3. Components
+   
+4. 
+
+5. 
+
+6. Media Queries 
+   
+====================== */
+
+@import url(./layout_css/checkout.css);
+@import url(./layout_css/contact.css);
+
+
+/* ======================
+    1. GLOBAL STYLE
+====================== */
+
+/* --- Base elements --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --smokey: #121212;
+    --perry: #c5d1d9;
+    --blue-dark: #1d2540;
+    --blue-light: rgb(7, 77, 217);
+    --red: #ff2222;
+    --green1: #00ff00;
+    --green2: #0df205;
+    --rhythm: #7a778c;
+    --anti-flash: #f2f2f2;
+
+    --border: 0.1em solid;
+
+    --clr-prim: hsla(195, 100%, 40%, 0.35);
+    --prim-bor: var(--border) #0099cc;
+
+    --clr-warn: hsla(32, 100%, 50%, 0.35);
+    --warn-bor: var(--border) #ff8800;
+
+    --clr-err: hsla(0, 100%, 40%, 0.35);
+    --err-bor: var(--border) #cc0000;
+
+    --clr-ok: hsla(144, 100%, 25%, 0.35);
+    --ok-bor: var(--border) #007e33;
+
+    --box-shadow: 0px 5px 16px 5px rgba(242, 27, 27, 0.452);
+    --hover-shadow: 0px 5px 16px 5px rgba(7, 77, 217, 0.452);
+
+    --padding: 1.5rem;
+    --margin: 2.5rem;
+}
+
+/* --- HTML elements --- */
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    gap: 5px;
+    padding: 0;
+    margin: 0;
+    background-color: var(--anti-flash);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+    background-color: var(--smokey);
+}
+
+main {
+    max-width: 100%;
+    background-color: var(--anti-flash);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--smokey);
+}
+
+footer>ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px
+}
+
+footer label {
+    color: var(--anti-flash);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+label {
+    color: #000000
+}
+
+/* ======================
+    2. TYPOGRAPHY
+====================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Play&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap");
+
+h1 {
+    font-size: 36px;
+    font-family: "Abril Fatface", cursive;
+    color: var(--smokey);
+}
+
+h2 {
+    font-size: 26px;
+    font-family: "Play", sans-serif;
+    color: var(--smokey);
+}
+
+h3 {
+    font-size: 24px;
+    font-family: "Play", sans-serif;
+    color: var(--smokey);
+}
+
+p,
+a,
+li,
+label {
+    font-family: "Montserrat", sans-serif;
+    color: #000000
+}
+
+/* ======================
+    3. MESSAGES
+====================== */
+
+.info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+    align-content: center;
+
+    font-family: "Smooch Sans", sans-serif;
+    font-size: 19px;
+
+    margin: 10px auto;
+    padding: var(--padding);
+}
+
+.primary {
+    border: var(--prim-bor);
+    background-color: var(--clr-prim);
+}
+
+.warning {
+    border: var(--warn-bor);
+    background-color: var(--clr-warn);
+}
+
+.error {
+    border: var(--err-bor);
+    background-color: var(--clr-err);
+}
+
+.success {
+    border: var(--ok-bor);
+    background-color: var(--clr-ok);
+}
+
+/* ======================
+    4. Main classes
+====================== */
+
+/* ==== Navigation mobile ==== */
+.navigation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+    gap: 15px;
+
+    justify-content: space-between;
+    position: relative;
+}
+
+.skip-nav {
+    position: absolute;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    padding: 1.15rem;
+
+    transform: translateY(-120%);
+}
+
+.skip-nav:focus {
+    transform: translateY(0%);
+}
+
+.logo {
+    width: 150px;
+}
+
+/* ==== Menu mobile ==== */
+.menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-li,
+.nav-top,
+.toggle {
+    padding: 10px;
+    align-self: flex-end;
+}
+
+.toggle {
+    order: 1;
+}
+
+.nav-top {
+    display: none;
+    order: 2;
+}
+
+.nav-li {
+    display: none;
+    order: 3;
+}
+
+.active .nav-li,
+.active .nav-top {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ==== Text-box ==== */
+.text-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+    max-width: max-content;
+
+    background-color: var(--anti-flash);
+    opacity: 0.7;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 1.5rem;
+}
+
+.text-box>h1 {
+    text-align: center;
+    color: #000000;
+}
+
+.text-box>p {
+    margin: 0.25rem;
+    text-align: center;
+    color: #000000;
+}
+
+.text-box-image {
+    width: 250px;
+}
+
+/* ==== Container ==== */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+    flex: 1;
+    width: calc(100% - 25px);
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: var(--smokey);
+    color: var(--anti-flash);
+}
+
+.container-index {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: center;
+
+    margin: 0 auto;
+    padding: 15px;
+
+}
+
+.container-row {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.container-box {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.container>h1,
+.container>h2 {
+    text-align: center;
+    color: var(--anti-flash);
+}
+
+.display-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.display-container h2 {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    color: var(--anti-flash);
+}
+
+.display-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.display-container h2 {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    color: var(--anti-flash);
+}
+
+/* ==== Game Gallery  ==== */
+
+.game-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-evenly;
+    max-width: 100%;
+    margin: 15px;
+    padding: 50px;
+    position: relative;
+}
+
+.game-gallery>.cta {
+    align-self: flex-end;
+}
+
+.game-gallery::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: calc(100% + var(--padding));
+    background: var(--green2);
+}
+
+.game-gallery::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: calc(100% + var(--padding));
+    background: var(--green2);
+}
+
+/* ==== Displaying game information on details page ==== */
+.display-game-details {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.display-game-details>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-title {
+    color: #f2f2f2;
+}
+
+.game-image,
+.screenshots {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    gap: 15px;
+}
+
+.screenshots img {
+    max-width: 200px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: calc(100% - 200px);
+}
+
+.details p,
+.details ul li {
+    color: #f2f2f2;
+}
+
+.price-info>h3 {
+    color: #f2f2f2;
+}
+
+.price-info>#purchase {
+    margin-left: auto;
+}
+
+/* ==== Banner ==== */
+
+.banner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    min-width: 800px;
+    max-width: 1000px;
+    margin: 5px auto;
+    background-color: var(--anti-flash);
+    border: 1px solid var(--red);
+    border-radius: 1.25rem;
+    filter: drop-shadow(0px 0px 4px var(--red));
+}
+
+.banner-header {
+    flex: 1 0 100%;
+    margin: 10px auto 0 auto;
+}
+
+.banner-header>h3 {
+    margin: 0 auto;
+}
+
+.banner-body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 1.5rem;
+}
+
+.banner-body>img {
+    margin-right: auto;
+    padding: 0;
+    margin: 0;
+    margin-right: 15px;
+
+    border-radius: 1.5rem;
+    max-width: 350px;
+    max-height: 150px;
+    opacity: 0.8;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.banner-content>p {
+    padding: 0;
+    margin: 0;
+    margin-left: 5px;
+    margin-right: auto;
+    color: #000000;
+}
+
+.slogan {
+    font-size: 24px;
+    font-style: italic;
+}
+
+.slogan::before,
+.slogan::after {
+    font-size: 24px;
+    font-weight: 500;
+    content: '"';
+}
+
+/* ==== Image ==== */
+.ratio-box {
+    width: 100%;
+    height: 0;
+    padding-top: calc(100% * (9 / 16));
+    position: relative;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+}
+
+.details-image {
+    border-radius: 50%;
+    max-width: 250px;
+    aspect-ratio: 1;
+    padding: 0;
+    margin: 0 auto;
+    opacity: 0.8;
+}
+
+.main-image {
+    min-width: 100%;
+    max-width: 950px;
+
+    border: 1px solid var(--red);
+    filter: drop-shadow(0px 0px 2px var(--red));
+}
+
+.small-image {
+    max-width: 350px;
+
+    border: 1px solid var(--red);
+    filter: drop-shadow(0px 0px 2px var(--red));
+}
+
+#main_image,
+#screenshots {
+    margin: 0 auto;
+}
+
+/* ==== Log in / sign up styling ==== */
+.box {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--anti-flash);
+    color: var(--smokey);
+
+    border-radius: 2rem;
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.box .tabs {
+    margin-top: var(--margin);
+    margin: 0 auto;
+}
+
+.box>h1 {
+    text-align: center;
+    color: #000000;
+}
+
+.box p {
+    color: #000000;
+}
+
+.box>div {
+    text-align: center;
+    padding: var(--padding);
+    color: #000000;
+}
+
+.tabs {
+    display: inline-flex;
+    gap: 15px;
+    width: fit-content;
+    transform: translateY(5px);
+}
+
+/* ==== Modal ==== */
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid black;
+}
+
+.modal.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-body {
+    position: relative;
+    min-width: fit-content;
+    min-height: fit-content;
+    background-color: var(--anti-flash);
+    border: 1px solid var(--red);
+    border-radius: 2rem;
+    filter: drop-shadow(0px 0px 2px var(--red));
+    overflow: hidden;
+
+    margin: 0 25px;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #121212;
+}
+
+.modal-header>h2 {
+    margin-left: 15px;
+    color: white;
+}
+
+.modal-header>.esc {
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+/* ==== Form ==== */
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    color: var(--smokey);
+}
+
+.form-wrapper p,
+.form-wrapper a {
+    color: #000000;
+}
+
+.form-container>h3 {
+    color: var(--smokey);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #000000;
+}
+
+.form>label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    color: #000000;
+}
+
+.form label input {
+    padding: 10px;
+
+    border-radius: 0.75rem;
+    border: 1px solid var(--red);
+    color: #000000;
+}
+
+input[type="checkbox"] {
+    padding: 0;
+    align-content: flex-start;
+    color: #000000;
+}
+
+/* --- Data Animation--- */
+[data-animation="slideInOutTop"] .modal-body {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.5s ease-in;
+}
+
+[data-animation="slideInOutTop"] .visible .modal-body {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.2s;
+}
+
+/* ==== Cards ==== */
+
+/* This card layout is made following a tutorial from Kevin Powell 
+https://www.youtube.com/watch?v=5DEq5cWNYt8
+ */
+
+.card {
+    flex: 1 1 calc(350px / 4);
+    padding: 10rem 0 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+
+    transition: transform 500ms ease;
+    opacity: 75%;
+
+    border: 1px solid var(--red);
+    filter: drop-shadow(0px 0px 4px var(--red));
+}
+
+.card:hover,
+.card:focus,
+.card:focus:within {
+    transform: scale(1.05);
+}
+
+.card-content {
+    --padding: 1.5rem;
+    padding: var(--padding);
+    background: linear-gradient(hsl(0 0% 0% / 0),
+            hsl(20 0% 50% / 0.3) 20%,
+            hsl(0 0% 0% / 1));
+    height: 100%;
+    margin-top: -15px;
+}
+
+.card-title {
+    color: var(--anti-flash);
+    position: relative;
+    max-width: 100%;
+}
+
+.card-title::after {
+    content: "";
+    position: absolute;
+    left: calc(var(--padding) * -1);
+    bottom: -5px;
+    height: 3px;
+    width: calc(100% + var(--padding));
+    background: var(--green2);
+
+    transition: transform 500ms ease;
+    transform-origin: left;
+}
+
+.card:hover .card-title::after,
+.card:focus-within .card-title::after {
+    transform: scaleX(1);
+}
+
+.card-body {
+    color: rgb(255 255 255 / 0.85);
+}
+
+/* ==== Button ==== */
+.cta {
+    display: inline-flex;
+    justify-content: center;
+    padding: 15px;
+    margin: 5px;
+    width: max-content;
+
+    background-color: #0d0d0d;
+    border-radius: 2rem;
+    border: 1px solid var(--red);
+    filter: drop-shadow(0px 0px 4px var(--red));
+
+    text-decoration: none;
+    color: #00ff00;
+    transform: translateZ(0);
+}
+
+.cta:hover {
+    filter: none;
+    box-shadow: 0px 0px 15px 0px rgba(7, 77, 217, 0.452);
+    -webkit-animation-name: pulse-shrink;
+    animation-name: pulse-shrink;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+.cta>.fa-house,
+.cta>.fa-gamepad,
+.cta>.fa-house-user {
+    margin-right: 15px;
+}
+
+
+/* ======================
+    5. For Global use 
+   ====================== */
+
+.disabled {
+    --color: hsla(0, 0%, 50%, 0.295);
+    background-color: var(--color);
+    border: inset 0.05rem solid var(--color);
+    color: white;
+}
+
+.disabled:hover {
+    box-shadow: none;
+    -webkit-animation-name: none;
+    animation-name: none;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    cursor: not-allowed;
+}
+
+.link {
+    color: #f2f2f2;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 2rem;
+    border: 1px solid var(--red);
+    box-shadow: 0px 0px 15px 0px var(--red);
+}
+
+.link:hover {
+    filter: none;
+    box-shadow: 0px 0px 15px 0px rgba(7, 77, 217, 0.452);
+}
+
+/* ======================
+    6. Media Queries 
+   ====================== */
+
+/* Mobile view */
+@media screen and (min-width: 250px) and (max-width: 425px) {
+    .banner {
+        min-width: auto;
+        max-width: 100%;
+    }
+
+    .game-gallery {
+        padding: 0;
+    }
+
+    .game-gallery>.cta {
+        margin: 20px auto;
+        align-self: baseline;
+    }
+
+    .card {
+        flex: 1 1 350px;
+    }
+
+    .card-content {
+        margin-top: 0px;
+    }
+
+    /* ==== Container ==== */
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 15px;
+        flex: 1;
+        width: 100%;
+        margin: 0 auto;
+        padding: 15px;
+        background-color: var(--smokey);
+        color: var(--anti-flash);
+    }
+
+    .container>h2 {
+        text-align: center;
+        color: var(--anti-flash);
+    }
+
+    .main-image {
+        max-width: 100%;
+
+        border: 1px solid var(--red);
+        filter: drop-shadow(0px 0px 2px var(--red));
+    }
+
+    .small-image {
+        max-width: 100%;
+
+        border: 1px solid var(--red);
+        filter: drop-shadow(0px 0px 2px var(--red));
+    }
+}
+
+/* Tablet view */
+@media all and (min-width: 425px) and (max-width: 860px) {
+    .menu {
+        padding-right: 25px;
+        justify-content: center;
+    }
+
+    .logo {
+        width: 350px;
+    }
+
+    .nav-li,
+    .nav-top {
+        display: none;
+        order: 2;
+        width: auto;
+    }
+
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 1;
+    }
+
+    .card {
+        flex: 1 1 350px;
+    }
+
+    .banner {
+        min-width: auto;
+        max-width: auto;
+    }
+
+    .game-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .game-gallery>.cta {
+        margin: 20px auto;
+        align-self: baseline;
+    }
+
+    .card {
+        flex: 1 1 350px;
+    }
+
+    .card-content {
+        margin-top: 0px;
+    }
+}
+
+/* Desktop view */
+@media all and (min-width: 860px) {
+    .menu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: flex-end;
+    }
+
+    .logo {
+        width: 350px;
+    }
+
+    .nav-li,
+    .nav-top {
+        display: flex;
+        order: 2;
+        width: auto;
+    }
+
+    .toggle {
+        display: none;
+    }
+
+    .card {
+        flex: 1 1 300px;
+    }
+}
+
+@media (hover) {
+    .card-content {
+        transform: translateY(60%);
+        transition: transform 500ms ease;
+    }
+
+    .card:hover .card-content,
+    .card:focus-within .card-content {
+        transform: translateY(10%);
+        transition-delay: 500ms;
+    }
+
+    .card:focus-within .card-content {
+        transition-duration: 0ms;
+    }
+
+    .card-content>*:not(.card-title) {
+        opacity: 0;
+        transition: opacity 600ms ease;
+    }
+
+    .card:hover .card-content>*:not(.card-title),
+    .card:focus-within .card-content>*:not(.card-title) {
+        opacity: 1;
+        transition-delay: 1000ms;
+
+        transition-duration: 0ms;
+    }
+
+    .card-title::after {
+        transform: scaleX(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0ms !important;
+    }
+}
+
+/* Pulse Shrink */
+
+@-webkit-keyframes pulse-shrink {
+    to {
+        -webkit-transform: scale(0.2);
+        transform: scale(0.2);
+    }
+}
+
+@keyframes pulse-shrink {
+    to {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(0.9);
+    }
+}
+
+
+

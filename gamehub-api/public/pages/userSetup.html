@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>GameHub Home</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/gamehub-api/public/css/master.css" />
+    
+     <!-- Hotjar Tracking Code for https://cross-course-christonn93.netlify.app -->
+     <script src="/gamehub-api/public/js/components/hotjar.js"></script>
+     <script src="https://kit.fontawesome.com/15a08758fb.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+    </header>
+    <main id="main">
+      <div class="container">
+        <div class="usersetup">
+      	<div class="box">
+				<h1>Welcome</h1>
+        <div>
+          <img src="https://media.istockphoto.com/vectors/neon-gamepad-glowing-gamepad-sign-on-black-background-colorful-and-vector-id1171662830?k=20&m=1171662830&s=612x612&w=0&h=HzYn1dO8BJwTY3u7a6SAKDawucqmpfPWcOwosRZvWcM=" alt="Gaming controller" class="details-image" />
+				<p>Please login to get access to your account.</p> 
+        <p>If you don't have a account yet sign up and get a 75% discount on your first punches</p>
+      </div>
+        <div class="tabs">
+        <button data-open="login" data-animation="slideInOutTop" class="cta">Log in</button>
+        <button data-open="signup" data-animation="slideInOutTop" class="cta">Sign up</button>
+      </div>
+    </div>
+      <div class="modal" id="login">
+        <div class="modal-body">
+          <div class="modal-header">
+            <h2>Log in</h2>
+            <button class="cta esc" data-close aria-label="Close form"><i class="fa-solid fa-circle-xmark"></i></button>
+					</div>
+					<div class="form-container">
+							<h3>Please fill inn your details so you can get access to your account</h3>
+							<div class="form-wrapper">
+									<form method="POST" action="" class="form">
+                    <label for="email">E-mail:
+										<input type="email" name="email" placeholder="Email" required>
+                  </label>
+                    <label for="password">Password:
+										<input type="password" name="password" placeholder="Password" required>
+                  </label>
+                  <div>
+                    <input type="checkbox" required>
+                    <label>Remember login details?</label>  
+                  </div>
+                    <input type="submit" value="Login" name="login" class="cta">
+									</form>
+									<p>Not a member yet? Become a member <a href="#signup" data-open="signup" data-close="login" data-animation="slideInOutTop">here</a></p>
+								</div>	
+						</div>
+        </div>
+      </div>
+
+      <div class="modal" id="signup">
+        <div class="modal-body">
+          <div class="modal-header">
+            <h2>Sign up</h2>
+						<button class="cta esc" data-close aria-label="Close form"><i class="fa-solid fa-circle-xmark"></i></button>
+					</div>
+					<div class="form-container">
+					<h3>Please fill inn your details to create a user</h3>
+					<div class="form-wrapper">
+              <form method="POST" action="" class="form">
+                <label>Username:*
+                <input type="name" name="userName" placeholder="Username" required>
+              </label>
+                <label>First name:*
+                <input type="name" name="firstName" placeholder="First name" required>
+              </label>
+                <label>Last name:*
+                <input type="name" name="lastName" placeholder="Last name" required>
+              </label>
+                <label>E-mail:*
+                <input type="email" name="email" placeholder="Email" required>
+              </label>
+                <label>Password:*
+                <input type="pass" name="pass" placeholder="Password" required>
+              </label>
+                <label>Repeat password:*
+                <input type="repass" name="repass" placeholder="Repeat-Password" required>
+              </label>
+              <div>
+              <input type="checkbox" required>
+              <label>By signing up you agree to <a href="#">our terms of use</a></label>  
+            </div>
+              <input type="submit" value="Register" name="register" class="cta">
+              </form>
+            </div>
+				</div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </main>
+    <footer>
+    </footer>
+    <script src="/gamehub-api/public/js/pages/userSetup.js" type="module"></script>
+  </body>
+</html>
+
+

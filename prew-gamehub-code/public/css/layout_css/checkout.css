@@ -1,0 +1,188 @@
+.checkout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    border-radius: 1.25rem;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.checkout-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: black;
+
+    position: relative;
+}
+
+.checkout-item>.amount {
+    margin: 0;
+    padding: 0;
+    max-width: 20px;
+}
+
+.checkout-item img {
+    min-width: 50px;
+    max-width: 150px;
+}
+
+.checkout-item p {
+    padding: 0;
+    margin: 0;
+}
+
+.checkout-item::after {
+    content: "";
+    position: absolute;
+    left: calc(var(--padding) * -1);
+    bottom: -5px;
+    height: 3px;
+    width: calc(100% + var(--padding));
+    background: var(--smokey);
+
+    transition: transform 500ms ease;
+    transform-origin: left;
+
+}
+
+.checkout-total>label {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.checkout-total>label>input {
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+.checkout-total>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+.checkout-total>div>p {
+    margin: 0;
+    margin: 5px 15px;
+    padding: 0;
+    color: var(--smokey);
+}
+
+.checkout-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px;
+    padding: 35px;
+}
+
+.payment-method {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 15px;
+    margin: 10px;
+    padding: 35px;
+    min-width: 500px;
+}
+
+.payment-option {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+}
+
+.payment-option>a {
+    height: max-content;
+    border: 1px solid red;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.payment-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 1.25rem;
+}
+
+.payment-form i {
+    font-size: 40px;
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+#bil-form i {
+    color: black;
+}
+
+.payment-form input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 16px;
+    background-color: transparent;
+    margin-bottom: 5px;
+}
+
+#date>input {
+    text-align: center;
+}
+
+.payment-form button {
+    margin-top: 15px;
+}
+
+.payment-form input:focus {
+    border: none;
+    border-bottom: 1px solid orange;
+}
+
+#visa-form {
+    overflow: hidden;
+    background-image: linear-gradient(-45deg, #1a1f71, #f7b600);
+    width: 325px;
+    height: 205px;
+}
+
+#mastercard-form {
+    overflow: hidden;
+    background-image: linear-gradient(-45deg, #eb001b, #ff5f00, #f79e1b);
+    width: 325px;
+    height: 205px;
+}
+
+#paypal-form {
+    overflow: hidden;
+    background-image: linear-gradient(-45deg, #253b80, #169bd7, #222d65);
+    width: 325px;
+    height: 205px;
+}
+
+#bil-form {
+    overflow: hidden;
+    background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0), rgb(255, 255, 255), rgba(0, 0, 0, 0));
+}
+
+#mm,
+#yyyy {
+    width: 50px;
+}

@@ -1,0 +1,59 @@
+/* === Contact form === */
+.container > .header > h1 {
+    color: #f2f2f2;
+    text-align: center;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    gap: 25px;
+    background-color: #f2f2f2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form-field {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.input-control {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-size: 18px;
+}
+
+.input-control>input,
+.input-control>textarea {
+    display: block;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    color: black;
+    font-size: 18px;
+}
+
+.input-control>input:focus,
+.input-control>textarea:focus {
+    outline: none;
+}
+
+.input-control.form-success input,
+.input-control.form-success textarea{
+    border-color: #09c372;
+}
+
+.input-control.form-error input,
+.input-control.form-error textarea {
+    border-color: #ff3860;
+}
+
+.input-control .form-error {
+    color: #ff3860;
+    font-size: 16px;
+    height: 13px;
+}
